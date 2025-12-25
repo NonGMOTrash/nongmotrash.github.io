@@ -57,6 +57,7 @@ var page = "";
 if (ref === undefined || ref.length === 0)
 {
 	page = "https://nongmotrash.net";
+	ref = window.location.href;
 }
 else {
 	switch(ref)
@@ -83,6 +84,8 @@ else {
 			document.getElementById("warning").style.display = "block";
 	}
 }
+
+console.log("using ref: " + ref);
 
 document.getElementById("link").href = page;
 
