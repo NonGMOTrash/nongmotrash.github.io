@@ -13,6 +13,8 @@ var page = ""; // the page to redirect to
 // matching old page urls to new urls
 switch(ref)
 {
+	case "https://nongmotrash.github.io/writing": page = "https://nongmotrash.net/writing"; break;
+	case "https://nongmotrash.github.io/blog": page = "https://nongmotrash.net/writing"; break;
 	case "https://nongmotrash.github.io/writing/1": page = "https://nongmotrash.net/writing/game-design/1"; break;
 	case "https://nongmotrash.github.io/blog/1": page = "https://nongmotrash.net/writing/game-design/1"; break;
 	case "https://nongmotrash.github.io/writing/2": page = "https://nongmotrash.net/writing/internet/1"; break;
