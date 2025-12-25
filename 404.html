@@ -4,11 +4,14 @@ this is basically a stub page that handels redirecting old links to nongmotrash.
 
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<title>(the old domain...)</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<head>
+	<title>(the old domain...)</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
 
 <link rel="stylesheet" href="style.css">  
+<script src="url_redirect.js" defer></script>
 
 <body>
 
@@ -16,53 +19,5 @@ this is basically a stub page that handels redirecting old links to nongmotrash.
 	<p id="warning">warning: there's no equivalent page on the new site (it was probably deleted)</p>
 
 </body>
-
-<script>
-
-let ref = Document.referrer;
-// remove the index.html part of the URL if present
-if (ref !== undefined && ref.endsWith("index.html"))
-{
-	ref = ref.slice(ref.size, -10);
-}
-
-var page = "";
-if (ref === undefined || ref.length === 0)
-{
-	page = "https://nongmotrash.net";
-	ref = window.location.href;
-}
-else {
-	switch(ref)
-	{
-		case "https://nongmotrash.github.io/writing/1": page = "https://nongmotrash.net/writing/game-design/1"; break;
-		case "https://nongmotrash.github.io/blog/1": page = "https://nongmotrash.net/writing/game-design/1"; break;
-		case "https://nongmotrash.github.io/writing/2": page = "https://nongmotrash.net/writing/internet/1"; break;
-		case "https://nongmotrash.github.io/blog/2": page = "https://nongmotrash.net/writing/internet/1"; break;
-		case "https://nongmotrash.github.io/writing/3": page = "https://nongmotrash.net/game-design/2"; break;
-		case "https://nongmotrash.github.io/blog/3": page = "https://nongmotrash.net/writing/internet/3"; break;
-		case "https://nongmotrash.github.io/writing/4": page = "https://nongmotrash.net/introspective/1"; break;
-		case "https://nongmotrash.github.io/writing/5": page = "https://nongmotrash.net/game-design/3"; break;
-		case "https://nongmotrash.github.io/writing/6": page = "https://nongmotrash.net/fiction/1"; break;
-		case "https://nongmotrash.github.io/writing/7": page = "https://nongmotrash.net/fiction/introspective/2"; break;
-		case "https://nongmotrash.github.io/teralite": page = "https://nongmotrash.net/games/teralite"; break;
-		case "https://nongmotrash.github.io/contact": page = "https://nongmotrash.net/about#contact"; break;
-		case "https://nongmotrash.github.io/fav-media/books": page = "https://nongmotrash.net/about/favs/books"; break;
-		case "https://nongmotrash.github.io/fav-media/books": page = "https://nongmotrash.net/about/favs/books"; break;
-		case "https://nongmotrash.github.io/fav-media/movies": page = "https://nongmotrash.net/about/favs/movies"; break;
-		case "https://nongmotrash.github.io/fav-media/music": page = "https://nongmotrash.net/about/favs/music"; break;
-		case "https://nongmotrash.github.io/fav-media/shows": page = "https://nongmotrash.net/about/favs/shows"; break;
-		default:
-			page = "https://nongmotrash.net" + ref.slice(29);
-			document.getElementById("warning").style.display = "block";
-	}
-}
-
-console.log("using ref: " + ref);
-console.log("selected page: " + page);
-
-document.getElementById("link").href = page;
-
-</script>
 
 </html> 
