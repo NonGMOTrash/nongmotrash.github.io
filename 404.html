@@ -5,37 +5,10 @@ this is basically a stub page that handels redirecting old links to nongmotrash.
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
-<title>404</title>
+<title>(the old domain...)</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<style>
-
-body {
-	background: black;
-	color: white;
-	min-width: 100vw;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	text-align: center;
-}
-
-a {
-	color: orange;
-}
-a:hover {
-	color: red;
-}
-
-#warning {
-	display: none;
-	color: red;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">  
 
 <body>
 
@@ -47,11 +20,11 @@ a:hover {
 <script>
 
 let ref = Document.referrer;
+// remove the index.html part of the URL if present
 if (ref !== undefined && ref.endsWith("index.html"))
 {
 	ref = ref.slice(ref.size, -10);
 }
-
 
 var page = "";
 if (ref === undefined || ref.length === 0)
@@ -86,6 +59,7 @@ else {
 }
 
 console.log("using ref: " + ref);
+console.log("selected page: " + page);
 
 document.getElementById("link").href = page;
 

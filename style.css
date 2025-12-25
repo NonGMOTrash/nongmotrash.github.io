@@ -1,0 +1,25 @@
+body {
+	background: black;
+	color: white;
+	min-width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+a {
+	color: lightblue;
+}
+a:hover {
+	color: orange;
+}
+
+#warning {
+	display: none;
+	color: red;
+}
+
+
