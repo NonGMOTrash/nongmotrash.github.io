@@ -41,4 +41,3 @@ console.log("using ref: " + ref);
 console.log("selected page: " + page);
 
 document.getElementById("link").href = page;
-
