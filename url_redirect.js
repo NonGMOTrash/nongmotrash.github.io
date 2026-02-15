@@ -32,9 +32,7 @@ switch(ref)
 	case "https://nongmotrash.github.io/fav-media/movies": page = "https://nongmotrash.net/about/favs/movies"; break;
 	case "https://nongmotrash.github.io/fav-media/music": page = "https://nongmotrash.net/about/favs/music"; break;
 	case "https://nongmotrash.github.io/fav-media/shows": page = "https://nongmotrash.net/about/favs/shows"; break;
-	default:
-		page = "https://nongmotrash.net" + ref.slice(29);
-		document.getElementById("warning").style.display = "block";
+	default: page = "https://nongmotrash.net" + ref.slice(29);
 }
 
 console.log("using ref: " + ref);
